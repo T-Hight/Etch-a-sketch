@@ -1,0 +1,67 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: purple;
+}
+
+.header div {
+    display: flex;
+    flex: 1;
+    font-size: 100px;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 2px 2px 6px rgb(0, 0, 0);
+    color: yellow;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    /*background-color: blue;*/
+}
+
+.main {
+    display: flex;
+    background-color: brown;
+    padding: 10px;
+    height: 800px;
+}
+
+.sidebar {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: green;
+}
+
+.sketchBox {
+    display: flex;
+    flex: 4;
+    background-color: aqua;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+.sketch {
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    height: 500px;
+    width: 500px;
+
+}
+
+.grid-item {
+    border: 1px solid rgb(27, 27, 27);
+}
+
+.footer{
+    display: flex;
+    background-color: red;
+    height: 150px;
+}
