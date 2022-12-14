@@ -26,7 +26,7 @@
     height: 800px;
 }
 
-.sidebar {
+.side-bar {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -41,7 +41,21 @@ button {
     
 }
 
-.sketchBox {
+.black-btn {
+    background-color: black;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.color-btn {
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.sketch-box {
     display: flex;
     flex: 4;
     background-color: aqua;
