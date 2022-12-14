@@ -29,3 +29,17 @@ function makeRows(rows, cols) {
 
 makeRows(16, 16);
 
+const blackBtn = document.querySelector('.black-btn');
+sideBar.appendChild(blackBtn);
+
+const colorBtn = document.querySelector('.color-btn');
+sideBar.appendChild(colorBtn);
+
+const colorScale = document.querySelector('.color-scale-btn');
+sideBar.appendChild(colorScale);
+
+const gridBtn = document.querySelector('.grid-btn');
+sideBar.appendChild(gridBtn);
+
+const resetBtn = document.querySelector('.reset-btn');
+sideBar.appendChild(resetBtn);
