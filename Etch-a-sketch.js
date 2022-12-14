@@ -2,15 +2,15 @@ const header  = document.querySelector('.header');
 
 
 const intBox = document.createElement('div')
-intBox.textContent = "Etch a Sketch";
+intBox.textContent = "Etch-a-Sketch";
 header.appendChild(intBox);
 
 const main = document.querySelector('.main');
 
-const sideBar = document.querySelector('.sidebar');
+const sideBar = document.querySelector('.side-bar');
 main.appendChild(sideBar);
 
-const sketchBox = document.querySelector('.sketchBox')
+const sketchBox = document.querySelector('.sketch-box')
 main.appendChild(sketchBox);
 
 const sketch = document.querySelector('.sketch');
