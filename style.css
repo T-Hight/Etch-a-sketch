@@ -32,6 +32,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    padding-top: 100px;
+    padding-bottom: 100px;
     background-color: green;
 }
 
@@ -39,6 +41,12 @@ button {
     height: 50px;
     width: 100px;
     
+}
+
+.color-btn {
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 10px;
 }
 
 .black-btn {
@@ -49,7 +57,24 @@ button {
     border-radius: 10px;
 }
 
-.color-btn {
+.color-scale-btn {
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.slide-container {
+    height:50px;
+    width: 200px;
+    background-color: red;
+    justify-content: center;
+    align-content: center;
+}
+
+.reset-btn {
     font-size: medium;
     font-weight: bold;
     border-radius: 10px;
