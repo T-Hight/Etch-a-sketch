@@ -67,11 +67,23 @@ button {
 }
 
 .slide-container {
-    height:50px;
+    height:120px;
     width: 200px;
-    background-color: red;
-    justify-content: center;
-    align-content: center;
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+.slider {
+    width: 195px;
+    
+}
+
+.slide-container p {
+    margin-bottom: 10px;
+    margin-left: 70px;
+    font-size: medium;
+    font-weight: bold;
+    color: 
 }
 
 .reset-btn {
