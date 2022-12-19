@@ -122,6 +122,10 @@ button {
     background-color: white;
 }
 
+/*.grid-item:hover {
+    background-color: black;
+}*/
+
 .footer{
     display: flex;
     background-color: red;
