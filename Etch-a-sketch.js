@@ -16,6 +16,9 @@ main.appendChild(sketchBox);
 const sketch = document.querySelector('.sketch');
 sketchBox.appendChild(sketch);
 
+//const grid = document.createElement('grid-item');
+//sketch.appendChild(grid);
+
 const footer = document.querySelector('.footer');
 
 const colorBtn = document.querySelector('.color-btn');
@@ -35,6 +38,7 @@ sideBar.appendChild(resetBtn);
 
 const slider = document.getElementById('myRange');
 const output = document.getElementById('value');
+
 
 function makeRows(rows, cols) {
     sketch.style.setProperty('--grid-rows', rows);
@@ -56,6 +60,17 @@ slider.oninput = function() {
 //Create function to change the color of grid squares when hovered over
 
 //Create function to change grid squares to random colors
+let color = ['#FF0000', '#FFA500', '#FFFF00', '#8A2BE2', '#228B22', '#0000FF' ];
+
+function changeColor() {
+document.querySelectorAll('.grid-item').forEach((item, i) => {
+    let mouseOverFunc = function () {
+        this.style.background = 
+        color[Math.floor(Math.random() * color.length)];
+    };
+    item.onmouseover = mouseOverFunc;
+});
+}
 
 //Create function to choose the color of grid change
 
