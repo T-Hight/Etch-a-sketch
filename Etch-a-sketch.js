@@ -39,7 +39,7 @@ sideBar.appendChild(resetBtn);
 const slider = document.getElementById('myRange');
 const output = document.getElementById('value');
 
-
+//Create a function to make a variable grid of squares
 function makeRows(rows, cols) {
     sketch.style.setProperty('--grid-rows', rows);
     sketch.style.setProperty('--grid-cols', cols);
@@ -51,25 +51,36 @@ function makeRows(rows, cols) {
 
 makeRows(16, 16);
 
+//Create function to show value of grid slider
 output.innerHTML = slider.value;
 
 slider.oninput = function() {
     output.innerHTML = this.value;
 }
 
-//Create function to change the color of grid squares when hovered over
+//Create function to change the color of grid squares to black when hovered over
+let black = '#312A2A';
+
+function changeToBlack() {
+    document.querySelectorAll('.grid-item').forEach((item, i) => {
+        let mouseOverFunc = function() {
+            this.style.background = black;
+        };
+        item.onmouseover = mouseOverFunc;
+    });
+}
 
 //Create function to change grid squares to random colors
 let color = ['#FF0000', '#FFA500', '#FFFF00', '#8A2BE2', '#228B22', '#0000FF' ];
 
 function changeColor() {
-document.querySelectorAll('.grid-item').forEach((item, i) => {
-    let mouseOverFunc = function () {
-        this.style.background = 
-        color[Math.floor(Math.random() * color.length)];
-    };
-    item.onmouseover = mouseOverFunc;
-});
+    document.querySelectorAll('.grid-item').forEach((item, i) => {
+        let mouseOverFunc = function () {
+            this.style.background = 
+            color[Math.floor(Math.random() * color.length)];
+        };
+        item.onmouseover = mouseOverFunc;
+    });
 }
 
 //Create function to choose the color of grid change
