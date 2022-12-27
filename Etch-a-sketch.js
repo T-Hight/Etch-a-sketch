@@ -27,7 +27,7 @@ sideBar.appendChild(colorBtn);
 const blackBtn = document.querySelector('.black-btn');
 sideBar.appendChild(blackBtn);
 
-const colorScale = document.querySelector('.color-scale-btn');
+const colorScale = document.querySelector('.color-scale');
 sideBar.appendChild(colorScale);
 
 const slideContainer = document.querySelector('.slide-container');
@@ -35,9 +35,6 @@ sideBar.appendChild(slideContainer);
 
 const resetBtn = document.querySelector('.reset-btn');
 sideBar.appendChild(resetBtn);
-
-const slider = document.getElementById('myRange');
-const output = document.getElementById('value');
 
 //Create a function to make a variable grid of squares
 function makeRows(rows, cols) {
@@ -52,9 +49,12 @@ function makeRows(rows, cols) {
 makeRows(16, 16);
 
 //Create function to show value of grid slider
+const slider = document.getElementById('myRange');
+const output = document.getElementById('value');
+
 output.innerHTML = slider.value;
 
-slider.oninput = function() {
+slider.oninput = function range() {
     output.innerHTML = this.value;
 }
 
@@ -62,7 +62,7 @@ slider.oninput = function() {
 let black = '#312A2A';
 
 function changeToBlack() {
-    document.querySelectorAll('.grid-item').forEach((item, i) => {
+    document.querySelectorAll('.grid-item').forEach((item) => {
         let mouseOverFunc = function() {
             this.style.background = black;
         };
@@ -73,9 +73,9 @@ function changeToBlack() {
 //Create function to change grid squares to random colors
 let color = ['#FF0000', '#FFA500', '#FFFF00', '#8A2BE2', '#228B22', '#0000FF' ];
 
-function changeColor() {
-    document.querySelectorAll('.grid-item').forEach((item, i) => {
-        let mouseOverFunc = function () {
+function rainbow() {
+    document.querySelectorAll('.grid-item').forEach((item) => {
+        let mouseOverFunc = function() {
             this.style.background = 
             color[Math.floor(Math.random() * color.length)];
         };
@@ -84,6 +84,19 @@ function changeColor() {
 }
 
 //Create function to choose the color of grid change
+let newColor = '';
+let userColor = document.querySelector('.color-picker');
+
+userColor.addEventListener('change', myFunction);
+
+function myFunction() {
+    document.querySelectorAll('.grid-item').forEach((item) => {
+        let mouseOverFunc = function() {
+        this.style.background = userColor.value;
+        };
+        item.onmouseover = mouseOverFunc
+    });
+}
 
 //Create function to change the size of the grid between 16 and 100
 
