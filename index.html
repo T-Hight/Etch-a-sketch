@@ -12,7 +12,7 @@
     <div class="main">
         <div class="side-bar">
             <button onclick="changeToBlack()" class="black-btn">Black</button>
-            <button onclick="changeColor()" class="color-btn">
+            <button onclick="rainbow()" class="color-btn">
                 <span style="color: red">R</span
                 ><span style="color: orange">a</span
                 ><span style="color: yellow">i</span
@@ -21,11 +21,12 @@
                 ><span style="color: indigo">o</span
                 ><span style="color: red">w</span>
             </button>
-            <button class="color-scale-btn">
+            <div class="color-scale">
               <span style="color: red">Choose</span>
               <span style="color: green">Your</span>
               <span style="color: blue">Color</span>
-            </button>
+              <input type="color" class="color-picker" value="#0000ff">
+            </div>
             <div class="slide-container">
               <p>Grid Size</p>
               <input type="range" min="16" max="100" value="1" id="myRange" class="slider">
