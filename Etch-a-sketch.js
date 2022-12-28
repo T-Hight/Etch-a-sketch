@@ -1,6 +1,5 @@
 const header  = document.querySelector('.header');
 
-
 const intBox = document.createElement('div')
 intBox.textContent = "Etch-a-Sketch";
 header.appendChild(intBox);
@@ -15,9 +14,6 @@ main.appendChild(sketchBox);
 
 const sketch = document.querySelector('.sketch');
 sketchBox.appendChild(sketch);
-
-//const grid = document.createElement('grid-item');
-//sketch.appendChild(grid);
 
 const footer = document.querySelector('.footer');
 
@@ -40,7 +36,7 @@ sideBar.appendChild(resetBtn);
 function makeRows(rows, cols) {
     sketch.style.setProperty('--grid-rows', rows);
     sketch.style.setProperty('--grid-cols', cols);
-    for (c = 0; c < (rows * cols); c++) {
+    for (i = 0; i < (rows * cols); i++) {
         let cell = document.createElement('div');
         sketch.appendChild(cell).className = 'grid-item';
     };
@@ -84,12 +80,11 @@ function rainbow() {
 }
 
 //Create function to choose the color of grid change
-let newColor = '';
 let userColor = document.querySelector('.color-picker');
 
-userColor.addEventListener('change', myFunction);
+userColor.addEventListener('change', colorPicker);
 
-function myFunction() {
+function colorPicker() {
     document.querySelectorAll('.grid-item').forEach((item) => {
         let mouseOverFunc = function() {
         this.style.background = userColor.value;
