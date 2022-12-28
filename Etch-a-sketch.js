@@ -34,8 +34,8 @@ sideBar.appendChild(resetBtn);
 
 //Create a function to make a variable grid of squares
 function makeRows(rows, cols) {
-    sketch.style.setProperty('--grid-rows', rows);
-    sketch.style.setProperty('--grid-cols', cols);
+    sketch.style.gridTemplateRows = `repeat(${rows} 1fr)`;
+    sketch.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
     for (i = 0; i < (rows * cols); i++) {
         let cell = document.createElement('div');
         sketch.appendChild(cell).className = 'grid-item';
