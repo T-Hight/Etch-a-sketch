@@ -32,18 +32,6 @@ sideBar.appendChild(slideContainer);
 const resetBtn = document.querySelector('.reset-btn');
 sideBar.appendChild(resetBtn);
 
-//Create a function to make a variable grid of squares
-function makeRows(rows, cols) {
-    sketch.style.gridTemplateRows = `repeat(${rows} 1fr)`;
-    sketch.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
-    for (i = 0; i < (rows * cols); i++) {
-        let cell = document.createElement('div');
-        sketch.appendChild(cell).className = 'grid-item';
-    };
-};
-
-makeRows(16, 16);
-
 //Create function to show value of grid slider
 const slider = document.getElementById('myRange');
 const output = document.getElementById('value');
@@ -53,6 +41,41 @@ output.innerHTML = slider.value;
 slider.oninput = function range() {
     output.innerHTML = this.value;
 }
+
+const cells = slider.value;
+
+const grid = document.querySelectorAll('.grid-item');
+
+//Create a function to make a variable grid of squares
+function makeRows(cells, cells) {
+
+    sketch.style.gridTemplateRows = `repeat(${cells} 1fr)`;
+    sketch.style.gridTemplateColumns = `repeat(${cells}, 1fr)`;
+    
+    for (i = 0; i < (cells * cells); i++) {
+        let cell = document.createElement('div');
+        sketch.appendChild(cell).className = 'grid-item';
+    };
+};
+
+makeRows(cells, cells);
+
+//slider.addEventListener('change', () => {
+
+    //sketch.style.gridTemplateRows = `repeat(${cells} 1fr)`;
+    //sketch.style.gridTemplateColumns = `repeat(${cells}, 1fr)`;
+    
+    //for (i = 0; i < (cells * cells); i++) {
+     //   let cell = document.createElement('div');
+     //   sketch.appendChild(cell).className = 'grid-item';
+    //};
+
+    
+
+    
+    //});
+
+//});
 
 //Create function to change the color of grid squares to black when hovered over
 let black = '#312A2A';
@@ -92,7 +115,7 @@ function colorPicker() {
         item.onmouseover = mouseOverFunc
     });
 }
-
-//Create function to change the size of the grid between 16 and 100
-
-//Create function to reset grid size to 16
+//Create function to reset grid
+resetBtn.addEventListener('click', () => {
+    grid.background.color = '#0000ff';
+    });
