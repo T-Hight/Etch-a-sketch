@@ -44,13 +44,11 @@ slider.oninput = function range() {
 
 const cells = slider.value;
 
-const grid = document.querySelectorAll('.grid-item');
-
 //Create a function to make a variable grid of squares
 function makeRows(cells, cells) {
 
-    sketch.style.gridTemplateRows = `repeat(${cells} 1fr)`;
-    sketch.style.gridTemplateColumns = `repeat(${cells}, 1fr)`;
+    sketch.style.gridTemplateRows = `repeat(${cells} 2fr)`;
+    sketch.style.gridTemplateColumns = `repeat(${cells}, 2fr)`;
     
     for (i = 0; i < (cells * cells); i++) {
         let cell = document.createElement('div');
@@ -60,25 +58,10 @@ function makeRows(cells, cells) {
 
 makeRows(cells, cells);
 
-//slider.addEventListener('change', () => {
-
-    //sketch.style.gridTemplateRows = `repeat(${cells} 1fr)`;
-    //sketch.style.gridTemplateColumns = `repeat(${cells}, 1fr)`;
-    
-    //for (i = 0; i < (cells * cells); i++) {
-     //   let cell = document.createElement('div');
-     //   sketch.appendChild(cell).className = 'grid-item';
-    //};
-
-    
-
-    
-    //});
-
-//});
-
 //Create function to change the color of grid squares to black when hovered over
 let black = '#312A2A';
+
+let white = '#ffffff';
 
 function changeToBlack() {
     document.querySelectorAll('.grid-item').forEach((item) => {
@@ -87,7 +70,7 @@ function changeToBlack() {
         };
         item.onmouseover = mouseOverFunc;
     });
-}
+ }
 
 //Create function to change grid squares to random colors
 let color = ['#FF0000', '#FFA500', '#FFFF00', '#8A2BE2', '#228B22', '#0000FF' ];
@@ -115,7 +98,11 @@ function colorPicker() {
         item.onmouseover = mouseOverFunc
     });
 }
-//Create function to reset grid
-resetBtn.addEventListener('click', () => {
-    grid.background.color = '#0000ff';
-    });
+//Create function to reset 
+resetBtn.addEventListener('click', function() {
+    const cell = sketch.children;
+    for (let i = 0; i < cells*cells; i++) {
+        cell[i].style.backgroundColor = white;
+    }
+});
+
