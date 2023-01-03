@@ -42,7 +42,7 @@ slider.oninput = function range() {
     output.innerHTML = this.value;
 }
 
-const cells = slider.value;
+let cells = slider.value;
 
 //Create a function to build a grid of squares
 const makeRows = () => {
@@ -54,8 +54,8 @@ const makeRows = () => {
 };
 
 //Create function to remove grid items
-function removeAllChildNodes(parent){
-    while(parent.firstChild){
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
@@ -63,9 +63,15 @@ function removeAllChildNodes(parent){
 //Create a function to make a variable grid of squares
 slider.addEventListener('input', () => {
 
-    removeAllChildNodes.sketch
+    let val = document.getElementById('myRange').value;
+    output.textContent = val;
+
+    removeAllChildNodes(sketch);
+
+    sketch.setAttribute('style', `grid-template-columns: repeat(${val}, 1fr);
+     grid-template-rows: repeat(${val}, 1fr);`);
     
-    for (i = 0; i < (cells * cells); i++) {
+    for (i = 0; i < (val * val); i++) {
         let cell = document.createElement('div');
         sketch.appendChild(cell).className = 'grid-item';
     };
@@ -113,8 +119,12 @@ function colorPicker() {
 let white = '#ffffff';
 
 resetBtn.addEventListener('click', function() {
+
+    let val = document.getElementById('myRange').value;
+    output.textContent = val;
+
     const cell = sketch.children;
-    for (let i = 0; i < cells*cells; i++) {
+    for (let i = 0; i < val*val; i++) {
         cell[i].style.backgroundColor = white;
     }
 });
