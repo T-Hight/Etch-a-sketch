@@ -64,9 +64,6 @@ function removeAllChildNodes(parent){
 slider.addEventListener('input', () => {
 
     removeAllChildNodes.sketch
-
-    sketch.style.gridTemplateRows = `repeat(${cells} 1fr)`;
-    sketch.style.gridTemplateColumns = `repeat(${cells}, 1fr)`;
     
     for (i = 0; i < (cells * cells); i++) {
         let cell = document.createElement('div');
