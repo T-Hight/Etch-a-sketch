@@ -44,24 +44,38 @@ slider.oninput = function range() {
 
 const cells = slider.value;
 
-//Create a function to make a variable grid of squares
-function makeRows(cells, cells) {
+//Create a function to build a grid of squares
+const makeRows = () => {
 
-    sketch.style.gridTemplateRows = `repeat(${cells} 2fr)`;
-    sketch.style.gridTemplateColumns = `repeat(${cells}, 2fr)`;
-    
-    for (i = 0; i < (cells * cells); i++) {
+    for(let i = 0; i < 256; i++) {
         let cell = document.createElement('div');
         sketch.appendChild(cell).className = 'grid-item';
     };
 };
 
-makeRows(cells, cells);
+//Create function to remove grid items
+function removeAllChildNodes(parent){
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+//Create a function to make a variable grid of squares
+slider.addEventListener('input', () => {
+
+    removeAllChildNodes.sketch
+
+    sketch.style.gridTemplateRows = `repeat(${cells} 1fr)`;
+    sketch.style.gridTemplateColumns = `repeat(${cells}, 1fr)`;
+    
+    for (i = 0; i < (cells * cells); i++) {
+        let cell = document.createElement('div');
+        sketch.appendChild(cell).className = 'grid-item';
+    };
+});
 
 //Create function to change the color of grid squares to black when hovered over
 let black = '#312A2A';
-
-let white = '#ffffff';
 
 function changeToBlack() {
     document.querySelectorAll('.grid-item').forEach((item) => {
@@ -99,6 +113,8 @@ function colorPicker() {
     });
 }
 //Create function to reset 
+let white = '#ffffff';
+
 resetBtn.addEventListener('click', function() {
     const cell = sketch.children;
     for (let i = 0; i < cells*cells; i++) {
@@ -106,3 +122,4 @@ resetBtn.addEventListener('click', function() {
     }
 });
 
+makeRows();
