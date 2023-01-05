@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: purple;
+    background-color: #de5935;
 }
 
 .header div {
@@ -12,7 +12,7 @@
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-shadow: 2px 2px 6px rgb(0, 0, 0);
-    color: yellow;
+    color: #f7cd46;
     align-items: center;
     justify-content: center;
     height: 200px;
@@ -21,20 +21,26 @@
 
 .main {
     display: flex;
-    background-color: brown;
-    padding: 10px;
+    background-color: #5ac3b0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
     height: 800px;
 }
 
 .side-bar {
     display: flex;
-    flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    margin-left: 100px;
     padding-top: 100px;
     padding-bottom: 100px;
-    background-color: green;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 600px;
+    width: 200px;
+    background-color: #5ac3b0;
 }
 
 button {
@@ -65,7 +71,7 @@ button {
     padding: 10px;
     width: 80px;
     height: 80px;
-    background-color: white;
+    background-color: #5ac3b0;
 }
 
 .color-picker {
@@ -76,7 +82,7 @@ button {
 .slide-container {
     height:120px;
     width: 200px;
-    background-color: aqua;
+    background-color: #5ac3b0;
     border-radius: 10px;
 }
 
@@ -100,21 +106,25 @@ button {
 
 .sketch-box {
     display: flex;
-    flex: 4;
-    background-color: aqua;
+    position: relative;
+    left: 100px;
+    top: 50px;
+    background-color: #de5935;
     padding: 50px;
     justify-content: center;
     align-items: center;
+    height: 600px;
+    width: 600px;
+    border-radius: 10px;
 }
 
 .sketch {
-    display: inline-grid;
+    display: grid;
     box-shadow: 0px 0px 6px 3px rgb(129, 127, 127);
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
     height: 500px;
     width: 500px;
-
 }
 
 .grid-item {
@@ -123,8 +133,20 @@ button {
     background-color: white;
 }
 
+p {
+    color:
+}
+
 .footer{
     display: flex;
-    background-color: red;
+    background-color: #de5935;
     height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p{
+    font-size: 25px;
+    font-weight: bold;
+    color: #f7cd46;
 }
