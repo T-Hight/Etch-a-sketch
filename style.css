@@ -145,8 +145,9 @@ p {
     align-items: center;
 }
 
-.footer p{
+.footer p, a{
     font-size: 25px;
     font-weight: bold;
     color: #f7cd46;
 }
+
