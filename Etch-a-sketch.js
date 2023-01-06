@@ -15,8 +15,6 @@ main.appendChild(sketchBox);
 const sketch = document.querySelector('.sketch');
 sketchBox.appendChild(sketch);
 
-const footer = document.querySelector('.footer');
-
 const colorBtn = document.querySelector('.color-btn');
 sideBar.appendChild(colorBtn);
 
@@ -34,6 +32,7 @@ sideBar.appendChild(resetBtn);
 
 //Create function to show value of grid slider
 const slider = document.getElementById('myRange');
+
 const output = document.getElementById('value');
 
 output.innerHTML = slider.value;
@@ -42,11 +41,8 @@ slider.oninput = function range() {
     output.innerHTML = this.value;
 }
 
-let cells = slider.value;
-
 //Create a function to build a grid of squares
 const makeRows = () => {
-
     for(let i = 0; i < 256; i++) {
         let cell = document.createElement('div');
         sketch.appendChild(cell).className = 'grid-item';
@@ -62,8 +58,8 @@ function removeAllChildNodes(parent) {
 
 //Create a function to make a variable grid of squares
 slider.addEventListener('input', () => {
-
-    let val = document.getElementById('myRange').value;
+    const val = document.getElementById('myRange').value;
+    
     output.textContent = val;
 
     removeAllChildNodes(sketch);
@@ -78,7 +74,7 @@ slider.addEventListener('input', () => {
 });
 
 //Create function to change the color of grid squares to black when hovered over
-let black = '#312A2A';
+const black = '#312A2A';
 
 function changeToBlack() {
     document.querySelectorAll('.grid-item').forEach((item) => {
@@ -90,7 +86,7 @@ function changeToBlack() {
  }
 
 //Create function to change grid squares to random colors
-let color = ['#FF0000', '#FFA500', '#FFFF00', '#8A2BE2', '#228B22', '#0000FF' ];
+const color = ['#FF0000', '#FFA500', '#FFFF00', '#8A2BE2', '#228B22', '#0000FF' ];
 
 function rainbow() {
     document.querySelectorAll('.grid-item').forEach((item) => {
@@ -103,7 +99,7 @@ function rainbow() {
 }
 
 //Create function to choose the color of grid change
-let userColor = document.querySelector('.color-picker');
+const userColor = document.querySelector('.color-picker');
 
 userColor.addEventListener('change', colorPicker);
 
@@ -116,14 +112,16 @@ function colorPicker() {
     });
 }
 //Create function to reset 
-let white = '#ffffff';
+const white = '#ffffff';
 
 resetBtn.addEventListener('click', function() {
 
-    let val = document.getElementById('myRange').value;
+    const val = document.getElementById('myRange').value;
+    
     output.textContent = val;
 
     const cell = sketch.children;
+    
     for (let i = 0; i < val*val; i++) {
         cell[i].style.backgroundColor = white;
     }
